@@ -22,6 +22,7 @@ const addNewGoal = () => {
     const goalInput = document.querySelector('#goalInput').value;
     const goalList = document.querySelector('#goalList');
 
+    // 'goalExist' function to get all existing goals and check if 'goalInput' matches any of them.
     const goalExist = (inputText, list) => {
         const lowercaseText = inputText.toLowerCase(),
         goals = list.querySelectorAll('li');
@@ -29,20 +30,21 @@ const addNewGoal = () => {
         return Array.from(goals).some(goal => goal.textContent.toLowerCase() === lowercaseText);
     }
 
-    if(goalInput === ''){return;}
+    if(goalInput === ''){return;} // If 'Goal Input' is empty, return.
 
-    if(!goalExist(goalInput, goalList)) {
-        
+    if(!goalExist(goalInput, goalList)) { // If it's not a duplicate, proceed with adding it as a new goal.
         const newGoal = document.createElement('li'),
         makeGoalText = goalInput.charAt(0).toUpperCase() + goalInput.slice(1); // Ensure that first letter is uppercase
         newGoal.textContent = makeGoalText;
         goalList.appendChild(newGoal); 
     }
     else {
+        // A duplicate is found, display an alert to the user and don't add the goal to the list by returning back.
         alert(`Goal already exist.`);
         return;
     }
 
+    // Get all existing goals and add event listener that removes each goal when clicked.
     Array.from(goalList.querySelectorAll('li')).forEach(goal => {
         goal.addEventListener('click', () => {
             goal.remove();
