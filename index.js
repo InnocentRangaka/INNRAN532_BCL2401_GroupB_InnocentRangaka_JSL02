@@ -42,6 +42,12 @@ const addNewGoal = () => {
         alert(`Goal already exist.`);
         return;
     }
+
+    Array.from(goalList.querySelectorAll('li')).forEach(goal => {
+        goal.addEventListener('click', () => {
+            goal.remove();
+        });
+    });
     
     // ⚠️ Hint 1: Check for duplicates
     // Use 'goalList' to get all existing goals and check if 'goalInput' matches any of them.
