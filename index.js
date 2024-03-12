@@ -28,6 +28,8 @@ const addNewGoal = () => {
 
         return Array.from(goals).some(goal => goal.textContent.toLowerCase() === lowercaseText);
     }
+
+    if(goalInput === ''){return;}
     
     // ⚠️ Hint 1: Check for duplicates
     // Use 'goalList' to get all existing goals and check if 'goalInput' matches any of them.
