@@ -38,6 +38,10 @@ const addNewGoal = () => {
         newGoal.textContent = makeGoalText;
         goalList.appendChild(newGoal); 
     }
+    else {
+        alert(`Goal already exist.`);
+        return;
+    }
     
     // ⚠️ Hint 1: Check for duplicates
     // Use 'goalList' to get all existing goals and check if 'goalInput' matches any of them.
