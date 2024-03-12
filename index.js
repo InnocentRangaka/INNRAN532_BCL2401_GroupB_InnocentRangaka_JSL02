@@ -30,6 +30,14 @@ const addNewGoal = () => {
     }
 
     if(goalInput === ''){return;}
+
+    if(!goalExist(goalInput, goalList)) {
+        
+        const newGoal = document.createElement('li'),
+        makeGoalText = goalInput.charAt(0).toUpperCase() + goalInput.slice(1); // Ensure that first letter is uppercase
+        newGoal.textContent = makeGoalText;
+        goalList.appendChild(newGoal); 
+    }
     
     // ⚠️ Hint 1: Check for duplicates
     // Use 'goalList' to get all existing goals and check if 'goalInput' matches any of them.
