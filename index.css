@@ -1,5 +1,4 @@
-body, html {
-    height: 100%;
+html, body {
     margin: 0;
     display: flex;
     justify-content: center;
@@ -7,6 +6,10 @@ body, html {
     background: #f0f0f3;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     transition: background 0.3s ease, color 0.3s ease; /* Smooth transition for background and color changes */
+}
+
+body {
+    height: 100%;
 }
 
 #watch-container { 
